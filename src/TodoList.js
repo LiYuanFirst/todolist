@@ -28,30 +28,9 @@ class TodoList extends Component {
         </div>
         <Test content={this.state.inputValue} />
         <ul>
-<<<<<<< HEAD
-<<<<<<< HEAD
           {this.getTodoItem()}
-=======
-=======
->>>>>>> bef6650d5d49ed853278a10539bba0faaffb28be
-          {
-            this.state.list.map((item, index) => {
-              return(
-                <li 
-                  key={index} 
-                  onClick={this.handleDeleate.bind(this,index)}
-                >{item}</li>
-              ) 
-            })
-            
-          }
-<<<<<<< HEAD
->>>>>>> bef6650d5d49ed853278a10539bba0faaffb28be
-=======
->>>>>>> bef6650d5d49ed853278a10539bba0faaffb28be
         </ul>
       </div>
-
     );
   }
   getTodoItem() {
@@ -66,7 +45,6 @@ class TodoList extends Component {
       )
     })
   }
-<<<<<<< HEAD
   handleInputChange(e) {
     const value = e.target.value
     this.setState(() => ({
@@ -85,36 +63,7 @@ class TodoList extends Component {
     this.setState(() => ({
       list
     }))
-=======
-  handleBtnClick = () => {
-    this.setState({
-      list: [...this.state.list, this.state.inputValue],
-      inputValue: ''
-    })
-  }
-  handleDeleate (index) {
-    console.log(index)
-    const list = [...this.state.list]
-    list.splice(index, 1)
-    this.setState({
-      list: list
-    })
->>>>>>> bef6650d5d49ed853278a10539bba0faaffb28be
-  }
-  handleBtnClick = () => {
-    this.setState({
-      list: [...this.state.list, this.state.inputValue],
-      inputValue: ''
-    })
-  }
-  handleDeleate (index) {
-    console.log(index)
-    const list = [...this.state.list]
-    list.splice(index, 1)
-    this.setState({
-      list: list
-    })
   }
 }
 
-export default TodoList;
+export default TodoList
