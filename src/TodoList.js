@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TodoItem from './TodoItem'
 import Test from './Test'
 import './style.css'
+import axios from 'axios'
 class TodoList extends Component {
   constructor(props) {
     super(props);
@@ -32,6 +33,17 @@ class TodoList extends Component {
         </ul>
       </div>
     );
+  }
+  componentDidMount() {
+    console.log(0)
+    axios.get('./api/todolist')
+      .then((res)=>{
+        console.log(res)
+        this.setState((prevState) => ({
+          list: [...res.data]
+        }))
+      })
+      .catch(()=>{alert('err')})
   }
   getTodoItem() {
     return this.state.list.map((item, index) => {
