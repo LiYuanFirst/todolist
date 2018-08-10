@@ -35,7 +35,6 @@ class TodoList extends Component {
     );
   }
   componentDidMount() {
-    console.log(0)
     axios.get('./api/todolist')
       .then((res)=>{
         console.log(res)
